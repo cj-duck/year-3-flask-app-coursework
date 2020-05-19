@@ -1,0 +1,30 @@
+<html>
+	<head>
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Pet Type - Pet Info</title>
+	</head>
+	<body background="https://www.xmple.com/wallpaper/white-polka-dots-hexagon-blue-3840x2160-c2-ffffff-add8e6-l2-118-300-a-10-f-4.svg"> 	
+	{% include "navbar.html" %}
+	<div class="container">
+	<h3>Pets Type: {{ pet_type }}.</h3>
+	<h4>Click on a pet for more information!</h4><br>
+	<div class="row">
+		{% for pets in data.pets %}
+			{% if pets.category|lower == pet_type|lower %}
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail"><a href="{{ url_for('single_pet', pet=pets.name) }}">
+						<img src="{{ pets.img }}" class="img-rounded" style="width: 100%; height: 200px">
+						<div class="caption">
+							<h3>{{ pets.name }}</h3>
+						</div>
+					</a></div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>	
+	</div>
+</body>
+</html>
+

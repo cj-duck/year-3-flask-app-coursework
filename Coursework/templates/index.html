@@ -1,0 +1,16 @@
+<html>
+	<head>
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Diet Type Test</title>
+	</head>
+<body background="https://www.xmple.com/wallpaper/white-polka-dots-hexagon-blue-3840x2160-c2-ffffff-add8e6-l2-118-300-a-10-f-4.svg"> 	
+	{% include "navbar.html" %}
+	<div class="container" style="background-color: white; outline: 2px solid #add8e6;">
+		<h3> Hello, Welcome to my Pet Information website.</h3></br> 
+		<h4> To take a look at some pets use the navbar or go straight to <a href={{ url_for('all_pets')}}>all pets here.</a></h4><br>
+	</div>
+</body>
+</html>
+
